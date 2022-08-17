@@ -10,8 +10,9 @@ class MethodChannelMicrophoneInfo extends MicrophoneInfoPlatform {
   final methodChannel = const MethodChannel('microphone_info');
 
   @override
-  Future<String?> getPlatformVersion() async {
-    final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
-    return version;
+  Future<List<Object?>?> getMicrophoneInfo() async {
+    final microphones =
+        await methodChannel.invokeMethod<List<Object?>>('getMicrophoneInfo');
+    return microphones;
   }
 }

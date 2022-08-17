@@ -10,6 +10,12 @@ class MockMicrophoneInfoPlatform
 
   @override
   Future<String?> getPlatformVersion() => Future.value('42');
+
+  @override
+  Future<List<Object?>?> getMicrophoneInfo() {
+    // TODO: implement getMicrophoneInfo
+    throw UnimplementedError();
+  }
 }
 
 void main() {
@@ -24,6 +30,6 @@ void main() {
     MockMicrophoneInfoPlatform fakePlatform = MockMicrophoneInfoPlatform();
     MicrophoneInfoPlatform.instance = fakePlatform;
   
-    expect(await microphoneInfoPlugin.getPlatformVersion(), '42');
+    expect(await microphoneInfoPlugin.getMicrophoneInfo(), '42');
   });
 }

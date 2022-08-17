@@ -14,7 +14,7 @@ abstract class MicrophoneInfoPlatform extends PlatformInterface {
   ///
   /// Defaults to [MethodChannelMicrophoneInfo].
   static MicrophoneInfoPlatform get instance => _instance;
-  
+
   /// Platform-specific implementations should set this with their own
   /// platform-specific class that extends [MicrophoneInfoPlatform] when
   /// they register themselves.
@@ -23,7 +23,7 @@ abstract class MicrophoneInfoPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<String?> getPlatformVersion() {
+  Future<List<Object?>?> getMicrophoneInfo() {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
 }
